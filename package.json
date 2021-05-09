@@ -1,7 +1,22 @@
 {
   "name": "vue-editor-in-chief",
-  "version": "0.1.5",
+  "description": "A vue2 text editor to beautify the text and text box with elegant editing properties.",
+  "version": "0.1.6",
   "private": false,
+  "author": {
+		"name": "Neha Soni",
+		"email": "nehaswrankar988@gmail.com"
+  },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/Nehasoni988/vue-editor-in-chief"
+	},
+	"bugs": "https://github.com/Nehasoni988/vue-editor-in-chief/issues",
+	"keywords": [
+		"vue2",
+		"text-editor",
+		"editor"
+	],
   "files": ["dist/*"],
   "main": "./dist/vue-editor-in-chief.common.js",
   "scripts": {
