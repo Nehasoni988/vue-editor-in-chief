@@ -1,28 +1,61 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<div v-for="(item, index) in items" :key="index" class="container-div">
+			<h1>{{ item.type }}</h1>
+			<VueEditorChief :config="item"></VueEditorChief>
+		</div>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VueEditorChief from "@/components/VueEditorChief";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	name: "App",
+
+	data() {
+		return {
+			items: [
+				{
+					text: "Hello Input",
+					type: "input",
+					background: null,
+					family: null,
+					size: null,
+					color: null,
+					bold: false,
+					italic: false,
+					width: "500",
+					borderColor: "#bfbf00",
+				},
+				{
+					type: "textarea",
+					text: "Hello World",
+					background: null,
+					family: null,
+					size: null,
+					color: null,
+					bold: false,
+					italic: false,
+					width: "400",
+					borderColor: "#000",
+				},
+			],
+		};
+	},
+
+	components: {
+		VueEditorChief,
+	},
+};
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	text-align: center;
+}
+.container-div {
+	margin-top: 70px;
+	text-transform: capitalize;
 }
 </style>
