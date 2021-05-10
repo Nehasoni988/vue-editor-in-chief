@@ -1,7 +1,7 @@
 {
   "name": "vue-editor-in-chief",
   "description": "A vue2 text editor to beautify the text and text box with elegant editing properties.",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "private": false,
   "author": {
 		"name": "Neha Soni",

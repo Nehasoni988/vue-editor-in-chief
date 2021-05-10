@@ -26,11 +26,11 @@ export default {
 					bold: false,
 					italic: false,
 					width: "500",
-					borderColor: "#bfbf00",
+					borderColor: "#000000",
 				},
 				{
 					type: "textarea",
-					text: "Hello World",
+					text: "Hello Textarea",
 					background: null,
 					family: null,
 					size: null,
@@ -38,7 +38,7 @@ export default {
 					bold: false,
 					italic: false,
 					width: "400",
-					borderColor: "#000",
+					borderColor: "#000000",
 				},
 			],
 		};

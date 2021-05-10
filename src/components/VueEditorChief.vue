@@ -43,7 +43,6 @@
 							v-for="(color, index) in COLORS"
 							:key="index"
 							:class="[
-								'sub-menu-icons-vec',
 								'colors-square-vec',
 								{ 'highlight-border-vec': item.background == color },
 							]"
@@ -55,24 +54,6 @@
 						class="sub-menu-btn-icon-vec colors-square-vec highlight-border-vec"
 						:style="{ background: item.background }"
 					></div>
-				</button>
-
-				<!-- Bold -->
-				<button
-					v-if="item.hasOwnProperty('bold')"
-					@click="item.bold = !item.bold"
-					:class="{ 'highlight-background-vec': item.bold }"
-				>
-					<span :class="[{ 'font-bold-vec': item.bold }]">B</span>
-				</button>
-
-				<!-- Italic -->
-				<button
-					v-if="item.hasOwnProperty('italic')"
-					@click="item.italic = !item.italic"
-					:class="{ 'highlight-background-vec': item.italic }"
-				>
-					<span :class="[{ 'font-bold-vec': item.bold }]">I</span>
 				</button>
 
 				<!-- Font Family -->
@@ -90,9 +71,29 @@
 							{{ family }}
 						</div>
 					</div>
-					<span class="sub-menu-btn-icon-vec">
-						F<span class="sub-script-vec">F</span>
+					<span class="sub-menu-btn-icon-vec font-bold-vec">
+						F<span class="sub-script-vec ">F</span>
 					</span>
+				</button>
+
+				<!-- Bold -->
+				<button
+					style="width:60px"
+					v-if="item.hasOwnProperty('bold')"
+					@click="item.bold = !item.bold"
+					:class="{ 'highlight-background-vec': item.bold }"
+				>
+					<span class="font-bold-vec">B</span>
+				</button>
+
+				<!-- Italic -->
+				<button
+					style="width:60px"
+					v-if="item.hasOwnProperty('italic')"
+					@click="item.italic = !item.italic"
+					:class="{ 'highlight-background-vec': item.italic }"
+				>
+					<span class="font-bold-vec">I</span>
 				</button>
 
 				<!-- Font Size -->
@@ -110,7 +111,7 @@
 							{{ size }}
 						</div>
 					</div>
-					<span class="sub-menu-btn-icon-vec"
+					<span class="sub-menu-btn-icon-vec font-bold-vec"
 						>T<span class="sub-script-vec">T</span></span
 					>
 				</button>
@@ -122,7 +123,6 @@
 							v-for="(color, index) in COLORS"
 							:key="index"
 							:class="[
-								'sub-menu-icons-vec',
 								'colors-square-vec',
 								{ 'highlight-border-vec': item.color == color },
 							]"
@@ -131,7 +131,7 @@
 						></div>
 					</div>
 					<span
-						class="sub-menu-btn-icon-vec"
+						class="sub-menu-btn-icon-vec font-bold-vec"
 						:style="{ borderBottom: `3px solid ${item.color}` }"
 						>A</span
 					>
@@ -287,9 +287,11 @@ export default {
 	background: #ededed !important;
 }
 .colors-square-vec {
-	width: 10px;
-	height: 10px;
+	width: 13px;
+	height: 13px;
+	margin: 0px 5px;
 	display: inline-block;
+	border-radius: 3px;
 }
 .sub-script-vec {
 	vertical-align: sub;
@@ -313,7 +315,7 @@ export default {
 
 /* btn group's buttons (inside parent dropdown) */
 .btn-group-vec {
-	width: 550px;
+	width: 480px;
 }
 .btn-group-vec button {
 	width: 90px;
@@ -323,7 +325,7 @@ export default {
 	color: #000;
 	font-size: 18px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	padding: 15px 8px;
+	padding: 8px;
 	cursor: pointer;
 	float: left;
 	outline: none;
@@ -351,9 +353,6 @@ export default {
 .sub-menu-labels-vec {
 	padding-top: 10px;
 	font-size: 13px;
-}
-.sub-menu-icons-vec {
-	margin: 5px;
 }
 .sub-menu-labels-vec:hover {
 	color: red;
